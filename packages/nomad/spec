@@ -1,0 +1,5 @@
+---
+name: nomad
+dependencies: []
+files:
+- nomad/nomad_*_linux_amd64.zip

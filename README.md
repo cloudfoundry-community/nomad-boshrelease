@@ -1,5 +1,8 @@
 # BOSH Release for nomad
 
+BOSH release for deploying [Nomad](nomadproject.io)
+
+
 ## Usage
 
 To use this bosh release, first upload it to your bosh:

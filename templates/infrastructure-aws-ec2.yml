@@ -9,10 +9,17 @@ meta:
     version: latest
 
 jobs:
-  - name: just_install_packages
+  - name: server
+    networks:
+      - name: nomad1
+        static_ips: (( static_ips(0, 1, 2, 3, 4) ))
+    persistent_disk: (( grab meta.persistent_disk ))
+
+  - name: node
     networks:
       - name: nomad1
     persistent_disk: (( grab meta.persistent_disk ))
+
 
 compilation:
   cloud_properties:

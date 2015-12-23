@@ -57,6 +57,9 @@ if [[ -z ${STEMCELL} ]]; then
 fi
 STEMCELL=${STEMCELL:-$(latest_uploaded_stemcell)}
 
+# Upload docker release
+#bosh upload release --skip-if-exists https://bosh.io/d/github.com/cf-platform-eng/docker-boshrelease
+
 templates=$(dirname $0)
 release=$templates/..
 tmpdir=$release/tmp

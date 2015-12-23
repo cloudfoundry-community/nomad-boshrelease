@@ -1,0 +1,26 @@
+---
+name: nomad
+packages:
+- nomad
+templates:
+  bin/ctl: bin/ctl
+  bin/monit_debugger: bin/monit_debugger
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh
+  config/nomad.conf.erb:  config/server.hcl
+properties:
+  nomad.bind_address:
+    description: Address for Binding
+    default: 0.0.0.0
+
+  nomad.log_level:
+    description: Log level for nomad
+    default: INFO
+
+  nomad.server:
+    description: Run in server mode
+    default: true
+
+  nomad.lan:
+    description: "List of all Nomad Node IP Addresses."
