@@ -11,8 +11,6 @@ update:
 jobs:
   - name: server
     templates:
-    - name: docker
-      release: docker
     - name: nomad
       release: nomad
     instances: 1
