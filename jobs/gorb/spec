@@ -2,6 +2,7 @@
 name: gorb
 packages:
 - gorb
+- pid_utils
 templates:
   bin/ctl: bin/ctl
   bin/monit_debugger: bin/monit_debugger
