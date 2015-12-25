@@ -11,6 +11,8 @@ update:
 jobs:
   - name: server
     templates:
+    - name: consul
+      release: consul
     - name: nomad
       release: nomad
     instances: 1
@@ -20,11 +22,15 @@ jobs:
     properties:
       nomad:
         server: true
+      consul:
+        server: true
 
   - name: node
     templates:
     - name: docker
       release: docker
+    - name: consul
+      release: consul
     - name: nomad
       release: nomad
     instances: 3
@@ -35,8 +41,21 @@ jobs:
       nomad:
         server: false
 
+  - name: router
+    templates:
+    - name: consul
+      release: consul
+    - name: gorb
+      release: nomad
+    instances: 1
+    persistent_disk: 3200
+    resource_pool: small_z1
+    networks: (( param "please set node networks" ))
+
 networks: (( param "please set networks" ))
 
 properties:
+  consul:
+    join_hosts: (( grab jobs.server.networks.nomad1.static_ips ))
   nomad:
     lan: (( grab jobs.server.networks.nomad1.static_ips ))

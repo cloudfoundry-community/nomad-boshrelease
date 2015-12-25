@@ -1,1 +1,9 @@
---- {}
+---
+golang_1.5/go1.5.2.linux-amd64.tar.gz:
+  object_id: 8d62cb1d-d96d-46e4-9343-c5bf958a0c88
+  sha: cae87ed095e8d94a81871281d35da7829bd1234e
+  size: 76350075
+nomad/nomad_0.2.3_linux_amd64.zip:
+  object_id: ebf110fd-38ad-403c-adb9-3dad903d9795
+  sha: 50c59c7c779bc6660573b8b0cdd990a08e3378bf
+  size: 5932992

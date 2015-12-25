@@ -1,0 +1,6 @@
+---
+name: gorb
+dependencies:
+- golang
+files:
+- gorb/**/*

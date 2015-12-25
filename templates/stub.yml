@@ -14,3 +14,5 @@ releases:
     version: latest
   - name: docker
     version: latest
+  - name: consul
+    version: latest

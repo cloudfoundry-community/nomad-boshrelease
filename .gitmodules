@@ -1,0 +1,3 @@
+[submodule "src/gorb"]
+	path = src/gorb
+	url = https://github.com/kobolog/gorb.git

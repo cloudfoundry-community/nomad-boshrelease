@@ -59,6 +59,7 @@ STEMCELL=${STEMCELL:-$(latest_uploaded_stemcell)}
 
 # Upload docker release
 #bosh upload release --skip-if-exists https://bosh.io/d/github.com/cf-platform-eng/docker-boshrelease
+#bosh upload release --skip-if-exists https://bosh.io/d/github.com/cloudfoundry-community/consul-boshrelease
 
 templates=$(dirname $0)
 release=$templates/..

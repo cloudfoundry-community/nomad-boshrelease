@@ -21,6 +21,10 @@ jobs:
     networks:
       - name: nomad1
 
+  - name: router
+    networks:
+      - name: nomad1
+
 
 compilation:
   cloud_properties:
@@ -42,5 +46,7 @@ networks:
       - 10.244.234.2 - 10.244.234.60
 
 properties:
-  nomad: 
+  nomad:
     log_level: DEBUG
+  gorb:
+    debug: true
