@@ -47,6 +47,8 @@ jobs:
       release: consul
     - name: gorb
       release: nomad
+    - name: nomadic-router
+      release: nomad
     instances: 1
     persistent_disk: 3200
     resource_pool: small_z1

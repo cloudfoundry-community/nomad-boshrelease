@@ -1,0 +1,6 @@
+---
+name: nomadic-router
+dependencies:
+- golang
+files:
+- nomadic-router/**/*

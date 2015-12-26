@@ -1,0 +1,5 @@
+check process nomadic-router
+  with pidfile /var/vcap/sys/run/nomadic-router/nomadic-router.pid
+  start program "/var/vcap/jobs/nomadic-router/bin/monit_debugger nomadic-router_ctl '/var/vcap/jobs/nomadic-router/bin/ctl start'"
+  stop program "/var/vcap/jobs/nomadic-router/bin/monit_debugger nomadic-router_ctl '/var/vcap/jobs/nomadic-router/bin/ctl stop'"
+  group vcap

@@ -1,3 +1,6 @@
 [submodule "src/gorb"]
 	path = src/gorb
 	url = https://github.com/kobolog/gorb.git
+[submodule "src/nomadic-router"]
+	path = src/nomadic-router
+	url = https://github.com/longnguyen11288/nomadic-router.git
