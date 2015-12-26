@@ -37,6 +37,7 @@ client {
   network_interface = "REPLACE_NETWORK_INTERFACE"
   options {
     docker.endpoint = "unix:///var/vcap/sys/run/docker/docker.sock"
+    consul.address = "<%= discover_external_ip %>:8500"
   }
 
 }
