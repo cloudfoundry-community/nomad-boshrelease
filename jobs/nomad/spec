@@ -4,6 +4,7 @@ packages:
 - nomad
 templates:
   bin/ctl: bin/ctl
+  bin/pre-start.erb: bin/pre-start
   bin/monit_debugger: bin/monit_debugger
   data/properties.sh.erb: data/properties.sh
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
@@ -24,3 +25,6 @@ properties:
 
   nomad.lan:
     description: "List of all Nomad Node IP Addresses."
+
+  nomad.gw:
+    description: "IP of router box used for NAT."

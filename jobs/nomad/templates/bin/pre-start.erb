@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Determine network interface
+MY_IP=<%= spec.networks.send(spec.networks.methods(false).first).ip %>
+NETWORK_INTERFACE=$(ifconfig | grep -B 1 ${MY_IP} | grep -v inet | awk '{ print $1 }')
+
+# Adding router box as nat box
+<% if properties.nomad.server != true %>
+route add default gw  <%= properties.nomad.gw %> ${NETWORK_INTERFACE} || true
+<% end %>
