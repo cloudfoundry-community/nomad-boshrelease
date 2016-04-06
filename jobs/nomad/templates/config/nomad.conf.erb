@@ -21,6 +21,7 @@ end
 bind_addr = "<%= discover_external_ip %>"
 data_dir = "/var/vcap/store/nomad"
 log_level = "<%= properties.nomad.log_level %>"
+enable_syslog = true
 
 <% if properties.nomad.server == true %>
 server {

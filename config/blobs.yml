@@ -7,3 +7,11 @@ nomad/nomad_0.2.3_linux_amd64.zip:
   object_id: ebf110fd-38ad-403c-adb9-3dad903d9795
   sha: 50c59c7c779bc6660573b8b0cdd990a08e3378bf
   size: 5932992
+nomad/nomad_0.3.0_linux_amd64.zip:
+  object_id: ce5742e4-f191-4c59-910b-5b9ea52bf642
+  sha: 18e3ce0d29b900aa1f4f667d444b8dc0c221e6c9
+  size: 7775958
+nomad/nomad_0.3.1_linux_amd64.zip:
+  object_id: 9bfa3d38-2a98-4e2a-ac82-69b54229e1af
+  sha: 456df8d66e5205bf5f1cad5bd4d67e20f905ce25
+  size: 7824305

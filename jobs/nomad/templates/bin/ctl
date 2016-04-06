@@ -17,6 +17,8 @@ case $1 in
     # store pid in $PIDFILE
     echo $$ > $PIDFILE
 
+    echo "1" >/proc/sys/net/ipv4/ip_forward
+
     # This is really bad but nomad likes to pick up docker interface.
     # this uses ip that bosh thinks it is and find out interface.
     MY_IP=<%= spec.networks.send(spec.networks.methods(false).first).ip %>

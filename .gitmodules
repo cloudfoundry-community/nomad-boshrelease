@@ -4,3 +4,6 @@
 [submodule "src/nomadic-router"]
 	path = src/nomadic-router
 	url = https://github.com/longnguyen11288/nomadic-router.git
+[submodule "src/janus"]
+	path = src/janus
+	url = https://github.com/luizbafilho/janus

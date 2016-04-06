@@ -38,6 +38,8 @@ jobs:
     resource_pool: small_z1
     networks: (( param "please set node networks" ))
     properties:
+      consul:
+        server: false
       nomad:
         server: false
 
