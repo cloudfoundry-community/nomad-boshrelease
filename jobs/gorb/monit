@@ -1,5 +1,0 @@
-check process gorb
-  with pidfile /var/vcap/sys/run/gorb/gorb.pid
-  start program "/var/vcap/jobs/gorb/bin/monit_debugger gorb_ctl '/var/vcap/jobs/gorb/bin/ctl start'"
-  stop program "/var/vcap/jobs/gorb/bin/monit_debugger gorb_ctl '/var/vcap/jobs/gorb/bin/ctl stop'"
-  group vcap
