@@ -15,3 +15,7 @@ nomad/nomad_0.3.1_linux_amd64.zip:
   object_id: 9bfa3d38-2a98-4e2a-ac82-69b54229e1af
   sha: 456df8d66e5205bf5f1cad5bd4d67e20f905ce25
   size: 7824305
+nomad/nomad_0.3.2_linux_amd64.zip:
+  object_id: e1266475-c089-4aef-a99f-fa4247abd018
+  sha: 79b7919c3ff5e86eb8790d48d8c7393dc503a37d
+  size: 8109010
