@@ -13,10 +13,6 @@ templates:
   config/shared.hcl.erb:  config/shared.hcl
   config/client.hcl.erb:  config/client.hcl
 properties:
-  nomad.bind_address:
-    description: Address for Binding
-    default: 0.0.0.0
-
   nomad.log_level:
     description: Log level for nomad
     default: INFO
