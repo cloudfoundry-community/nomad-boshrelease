@@ -22,6 +22,7 @@ jobs:
     properties:
       nomad:
         server: true
+        servers: (( grab jobs.server.networks.nomad1.static_ips ))
       consul:
         server: true
         services:
@@ -35,7 +36,7 @@ jobs:
       release: consul
     - name: nomad
       release: nomad
-    instances: 3
+    instances: 1
     persistent_disk: 3200
     resource_pool: small_z1
     networks: (( param "please set node networks" ))
@@ -44,11 +45,10 @@ jobs:
         server: false
       nomad:
         server: false
+        servers: [nomad.service.consul]
 
 networks: (( param "please set networks" ))
 
 properties:
   consul:
     join_hosts: (( grab jobs.server.networks.nomad1.static_ips ))
-  nomad:
-    servers: (( grab jobs.server.networks.nomad1.static_ips ))

@@ -11,4 +11,4 @@ export JOB_FULL="$NAME/$JOB_INDEX"
 
 export NOMAD_CONFIG=${JOB_DIR}/config/<%= p('nomad.server') ? 'server.hcl' : 'client.hcl' %>
 
-export MY_IP=$(ifconfig | grep -A 1 encap:Ethernet | grep 'inet addr:' | sed 's/inet addr:\(.*\) Bcast.*/\1/' | tr -d '[[:space:]]')
+export MY_IP=<%= spec.networks.send(spec.networks.methods(false).first).ip %>

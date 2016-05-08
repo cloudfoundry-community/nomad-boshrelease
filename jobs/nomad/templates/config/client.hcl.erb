@@ -1,11 +1,9 @@
 client {
   enabled = true
   servers = <%= p('nomad.servers') %>
-  node_id = "<%= name %>/<%= index %>"
-  <%# network_interface = "REPLACE_NETWORK_INTERFACE" %>
   options {
     docker.endpoint = "unix:///var/vcap/sys/run/docker/docker.sock"
-    <%# consul.address = "<%= discover_external_ip %1>:8500" %>
+    consul.address = "<%= spec.networks.send(spec.networks.methods(false).first).ip  %>:8500"
     docker.cleanup.image = "false"
   }
 }
