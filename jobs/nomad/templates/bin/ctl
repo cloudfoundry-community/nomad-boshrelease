@@ -21,11 +21,11 @@ case $1 in
 
     # This is really bad but nomad likes to pick up docker interface.
     # this uses ip that bosh thinks it is and find out interface.
-    MY_IP=<%= spec.networks.send(spec.networks.methods(false).first).ip %>
-    NETWORK_INTERFACE=$(ifconfig | grep -B 1 ${MY_IP} | grep -v inet | awk '{ print $1 }')
-    /bin/sed -i \
-    -e "s/REPLACE_NETWORK_INTERFACE/${NETWORK_INTERFACE}/g" \
-    /var/vcap/jobs/nomad/config/server.hcl
+    # MY_IP=<%= spec.networks.send(spec.networks.methods(false).first).ip %>
+    # NETWORK_INTERFACE=$(ifconfig | grep -B 1 ${MY_IP} | grep -v inet | awk '{ print $1 }')
+    # /bin/sed -i \
+    # -e "s/REPLACE_NETWORK_INTERFACE/${NETWORK_INTERFACE}/g" \
+    # /var/vcap/jobs/nomad/config/server.hcl
 
 
     exec chpst -u vcap:vcap nomad agent \
