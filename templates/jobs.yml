@@ -43,19 +43,6 @@ jobs:
       nomad:
         server: false
 
-  - name: router
-    templates:
-    - name: consul
-      release: consul
-    - name: gorb
-      release: nomad
-    - name: nomadic-router
-      release: nomad
-    instances: 1
-    persistent_disk: 3200
-    resource_pool: small_z1
-    networks: (( param "please set node networks" ))
-
 networks: (( param "please set networks" ))
 
 properties:
@@ -63,4 +50,3 @@ properties:
     join_hosts: (( grab jobs.server.networks.nomad1.static_ips ))
   nomad:
     lan: (( grab jobs.server.networks.nomad1.static_ips ))
-    gw:  (( grab jobs.router.networks.nomad1.static_ips[0] ))

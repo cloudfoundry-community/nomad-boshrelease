@@ -25,6 +25,3 @@ properties:
 
   nomad.lan:
     description: "List of all Nomad Node IP Addresses."
-
-  nomad.gw:
-    description: "IP of router box used for NAT."

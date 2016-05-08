@@ -21,12 +21,6 @@ jobs:
     networks:
       - name: nomad1
 
-  - name: router
-    networks:
-      - name: nomad1
-        static_ips: (( static_ips(5) ))
-
-
 compilation:
   cloud_properties:
     name: random
