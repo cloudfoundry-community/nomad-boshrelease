@@ -9,7 +9,9 @@ templates:
   data/properties.sh.erb: data/properties.sh
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
-  config/nomad.conf.erb:  config/server.hcl
+  config/server.hcl.erb:  config/server.hcl
+  config/shared.hcl.erb:  config/shared.hcl
+  config/client.hcl.erb:  config/client.hcl
 properties:
   nomad.bind_address:
     description: Address for Binding

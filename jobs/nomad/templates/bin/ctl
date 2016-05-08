@@ -29,7 +29,7 @@ case $1 in
 
 
     exec chpst -u vcap:vcap nomad agent \
-         -config /var/vcap/jobs/nomad/config/server.hcl \
+         -config ${JOBS_DIR}/config/shared.hcl ${NOMAD_CONFIG}
          >>$LOG_DIR/$JOB_NAME.log 2>&1
 
     ;;
