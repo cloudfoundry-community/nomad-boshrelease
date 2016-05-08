@@ -51,4 +51,4 @@ properties:
   consul:
     join_hosts: (( grab jobs.server.networks.nomad1.static_ips ))
   nomad:
-    lan: (( grab jobs.server.networks.nomad1.static_ips ))
+    servers: (( grab jobs.server.networks.nomad1.static_ips ))

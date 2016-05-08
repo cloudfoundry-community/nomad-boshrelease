@@ -22,5 +22,5 @@ properties:
     description: Run in server mode
     default: true
 
-  nomad.lan:
+  nomad.servers:
     description: "List of all Nomad Node IP Addresses."
