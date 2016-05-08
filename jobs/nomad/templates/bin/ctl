@@ -27,9 +27,7 @@ case $1 in
     # -e "s/REPLACE_NETWORK_INTERFACE/${NETWORK_INTERFACE}/g" \
     # /var/vcap/jobs/nomad/config/server.hcl
 
-    my_ip=$(ifconfig | grep -A 1 encap:Ethernet | grep 'inet addr:' | sed 's/inet addr:\(.*\) Bcast.*/\1/' | tr -d '[[:space:]]')
-
-    echo "bind_addr = \"${my_ip}\"" > ${JOB_DIR}/config/bind.hcl
+    echo "bind_addr = \"${MY_IP}\"" > ${JOB_DIR}/config/bind.hcl
 
     exec chpst -u vcap:vcap nomad agent \
          -config ${JOB_DIR}/config/shared.hcl \

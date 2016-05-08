@@ -24,6 +24,8 @@ jobs:
         server: true
       consul:
         server: true
+        services:
+          nomad: {}
 
   - name: node
     templates:
