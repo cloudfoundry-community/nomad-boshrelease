@@ -18,7 +18,7 @@ job "example" {
 	# Restrict our job to only linux. We can specify multiple
 	# constraints as needed.
 	constraint {
-		attribute = "$attr.kernel.name"
+		attribute = "${attr.kernel.name}"
 		value = "linux"
 	}
 
@@ -38,15 +38,21 @@ job "example" {
 		# Defaults to 1
 		# count = 1
 
-		# Restart Policy - This block defines the restart policy for TaskGroups,
-		# the attempts value defines the number of restarts Nomad will do if Tasks
-		# in this TaskGroup fails in a rolling window of interval duration
-		# The delay value makes Nomad wait for that duration to restart after a Task
-		# fails or crashes.
+		# Configure the restart policy for the task group. If not provided, a
+		# default is used based on the job type.
 		restart {
-			interval = "5m"
+			# The number of attempts to run the job within the specified interval.
 			attempts = 10
+			interval = "5m"
+			
+			# A delay between a task failing and a restart occurring.
 			delay = "25s"
+
+			# Mode controls what happens when a task has restarted "attempts"
+			# times within the interval. "delay" mode delays the next restart
+			# till the next interval. "fail" mode does not restart the task if
+			# "attempts" has been hit within the interval.
+			mode = "delay"
 		}
 
 		# Define a task to run
@@ -86,6 +92,26 @@ job "example" {
 					}
 				}
 			}
+
+			# The artifact block can be specified one or more times to download
+			# artifacts prior to the task being started. This is convenient for
+			# shipping configs or data needed by the task.
+			# artifact {
+			#	  source = "http://foo.com/artifact.tar.gz"
+			#	  options {
+			#	      checksum = "md5:c4aa853ad2215426eb7d70a21922e794"
+			#     }
+			# }
+			
+			# Specify configuration related to log rotation
+			# logs {
+			#     max_files = 10
+			#	  max_file_size = 15
+			# }
+			 
+			# Controls the timeout between signalling a task it will be killed
+			# and killing the task. If not set a default is used.
+			# kill_timeout = "20s"
 		}
 	}
 }
