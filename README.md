@@ -1,6 +1,6 @@
 # BOSH Release for nomad
 
-BOSH release for deploying [Nomad](nomadproject.io)
+BOSH release for deploying [Nomad](http://nomadproject.io)
 
 
 ## Usage
