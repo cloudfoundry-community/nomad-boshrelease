@@ -2,4 +2,4 @@ bind_addr = "<%= spec.networks.send(spec.networks.methods(false).first).ip %>"
 name = "<%= name %>/<%= index %>"
 data_dir = "/var/vcap/store/nomad"
 log_level = "<%= p('nomad.log_level') %>"
-<%# enable_syslog = true %>
+enable_syslog = true
