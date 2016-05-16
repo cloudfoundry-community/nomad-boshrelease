@@ -23,3 +23,5 @@ properties:
 
   nomad.servers:
     description: "List of all Nomad Node IP Addresses."
+  nomad.meta:
+    description: Hash of meta values to pass to a nomad client

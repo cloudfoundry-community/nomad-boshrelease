@@ -6,4 +6,11 @@ client {
     consul.address = "<%= spec.networks.send(spec.networks.methods(false).first).ip  %>:8500"
     docker.cleanup.image = "false"
   }
+  <% if_p('nomad.meta') do |meta| %>
+  meta {
+    <% meta.each do |key,value| %>
+    "<%= key %>" = "<%= value %>"
+  <% end %>
+  }
+  <% end %>
 }
