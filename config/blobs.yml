@@ -3,14 +3,6 @@ golang_1.5/go1.5.2.linux-amd64.tar.gz:
   object_id: 8d62cb1d-d96d-46e4-9343-c5bf958a0c88
   sha: cae87ed095e8d94a81871281d35da7829bd1234e
   size: 76350075
-nomad/nomad_0.2.3_linux_amd64.zip:
-  object_id: ebf110fd-38ad-403c-adb9-3dad903d9795
-  sha: 50c59c7c779bc6660573b8b0cdd990a08e3378bf
-  size: 5932992
-nomad/nomad_0.3.0_linux_amd64.zip:
-  object_id: ce5742e4-f191-4c59-910b-5b9ea52bf642
-  sha: 18e3ce0d29b900aa1f4f667d444b8dc0c221e6c9
-  size: 7775958
 nomad/nomad_0.3.1_linux_amd64.zip:
   object_id: 9bfa3d38-2a98-4e2a-ac82-69b54229e1af
   sha: 456df8d66e5205bf5f1cad5bd4d67e20f905ce25
@@ -19,3 +11,11 @@ nomad/nomad_0.3.2_linux_amd64.zip:
   object_id: e1266475-c089-4aef-a99f-fa4247abd018
   sha: 79b7919c3ff5e86eb8790d48d8c7393dc503a37d
   size: 8109010
+nomad/nomad-ui:
+  object_id: 50938f92-a203-42ae-95c0-ca4ba24cd746
+  sha: b8f3a78cddeaf1b438144e6b823d20000e53be09
+  size: 11895512
+nomad/nomad_0.4.1_linux_amd64.zip:
+  object_id: 8e30ccc6-f599-4807-b042-98c42e51b2a0
+  sha: 33ebb18daf38621e1c5e1d5e98b5eb9dbc3446c9
+  size: 7925209

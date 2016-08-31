@@ -1,0 +1,14 @@
+---
+name: nomad-ui
+packages:
+- nomad
+templates:
+  bin/ctl: bin/ctl
+  bin/dns_health_check: bin/dns_health_check
+  bin/monit_debugger: bin/monit_debugger
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh
+properties:
+  nomad.servers:
+    description: "List of all Nomad Node IP Addresses."
