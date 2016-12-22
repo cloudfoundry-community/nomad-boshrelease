@@ -1,5 +1,5 @@
-check process nomad
-  with pidfile /var/vcap/sys/run/nomad/nomad.pid
-  start program "/var/vcap/jobs/nomad/bin/monit_debugger nomad_ctl '/var/vcap/jobs/nomad/bin/ctl start'"
-  stop program "/var/vcap/jobs/nomad/bin/monit_debugger nomad_ctl '/var/vcap/jobs/nomad/bin/ctl stop'"
+check process nomad-client
+  with pidfile /var/vcap/sys/run/nomad-client/nomad-client.pid
+  start program "/var/vcap/jobs/nomad-client/bin/monit_debugger nomad_client_ctl '/var/vcap/jobs/nomad-client/bin/ctl start'"
+  stop program "/var/vcap/jobs/nomad-client/bin/monit_debugger nomad_client_ctl '/var/vcap/jobs/nomad-client/bin/ctl stop'"
   group vcap

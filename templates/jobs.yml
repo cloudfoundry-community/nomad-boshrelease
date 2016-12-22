@@ -26,13 +26,8 @@ jobs:
     resource_pool: small_z1
     networks: (( param "please set server networks" ))
     properties:
-      nomad:
-        server: true
-        servers: (( grab jobs.server.networks.nomad1.static_ips ))
       consul:
         server: true
-        services:
-          nomad: {}
 
   - name: node
     templates:
@@ -51,12 +46,7 @@ jobs:
     properties:
       consul:
         server: false
-      nomad:
-        server: false
-        servers: [nomad.service.consul]
 
 networks: (( param "please set networks" ))
 
-properties:
-  consul:
-    join_hosts: (( grab jobs.server.networks.nomad1.static_ips ))
+properties: {}

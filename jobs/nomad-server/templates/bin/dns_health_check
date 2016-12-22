@@ -1,4 +1,0 @@
-#!/bin/bash
-
-source /var/vcap/jobs/nomad/data/properties.sh
-nomad agent-info -address=http://${MY_IP}:4646
