@@ -8,7 +8,7 @@ client {
   servers = <%= link('nomad_servers').instances.collect { |server| server.address } %>
   options {
     docker.endpoint = "unix:///var/vcap/sys/run/docker/docker.sock"
-    consul.address = "<%= spec.networks.send(spec.networks.methods(false).first).ip  %>:8500"
+    consul.address = "<%= spec.address %>:8500"
     docker.cleanup.image = "false"
   }
 
