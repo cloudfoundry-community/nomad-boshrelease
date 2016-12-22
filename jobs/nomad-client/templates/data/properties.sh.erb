@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# job template binding variables
+
+# job name & index of this VM within cluster
+# e.g. JOB_NAME=redis, JOB_INDEX=0
+export NAME='<%= name %>'
+export JOB_INDEX=<%= index %>
+# full job name, like redis/0 or webapp/3
+export JOB_FULL="$NAME/$JOB_INDEX"
+
+export NOMAD_CONFIG=${JOB_DIR}/config/client.hcl
+
+# Try to find out the network-interface to bind to from ip address
+# otherwise nomad will tend to use docker0 interface
+# and containers will not be accessible via the jobs ip
+export MY_IP=<%= spec.networks.send(spec.networks.methods(false).first).ip %>
+export NETWORK_INTERFACE=$(ifconfig | grep -B 1 ${MY_IP} | grep -v inet | awk '{ print $1 }')

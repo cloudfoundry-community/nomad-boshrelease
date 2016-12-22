@@ -20,7 +20,6 @@ case $1 in
     echo "1" >/proc/sys/net/ipv4/ip_forward
 
     exec chpst -u vcap:vcap nomad agent \
-         -config ${JOB_DIR}/config/shared.hcl \
          -config ${NOMAD_CONFIG} \
          -network-interface=${NETWORK_INTERFACE} \
          -bind=${MY_IP}

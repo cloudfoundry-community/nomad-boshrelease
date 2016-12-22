@@ -1,6 +1,0 @@
-server {
-  enabled = true
-  bootstrap_expect = <%= p('nomad.servers').size %>
-  rejoin_after_leave = true
-  retry_join = <%= p('nomad.servers') %>
-}

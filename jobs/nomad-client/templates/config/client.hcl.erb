@@ -1,11 +1,17 @@
+name = "<%= name %>/<%= index %>"
+data_dir = "/var/vcap/store/nomad"
+log_level = "<%= p('nomad.log_level') %>"
+enable_syslog = true
+
 client {
   enabled = true
-  servers = <%= p('nomad.servers') %>
+  servers = <%= link('nomad_servers').instances.collect { |server| server.address } %>
   options {
     docker.endpoint = "unix:///var/vcap/sys/run/docker/docker.sock"
     consul.address = "<%= spec.networks.send(spec.networks.methods(false).first).ip  %>:8500"
     docker.cleanup.image = "false"
   }
+
   <% if_p('nomad.meta') do |meta| %>
   meta {
     <% meta.each do |key,value| %>

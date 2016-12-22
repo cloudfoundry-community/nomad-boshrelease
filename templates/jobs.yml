@@ -13,7 +13,11 @@ jobs:
     templates:
     - name: consul
       release: consul
-    - name: nomad
+      provides:
+        consul_servers: { as: consul_leaders }
+      consumes:
+        consul_servers: { from: consul_leaders }
+    - name: nomad-server
       release: nomad
     - name: nomad-ui
       release: nomad
@@ -36,7 +40,9 @@ jobs:
       release: docker
     - name: consul
       release: consul
-    - name: nomad
+      consumes:
+        consul_servers: { from: consul_leaders }
+    - name: nomad-client
       release: nomad
     instances: 1
     persistent_disk: 3200

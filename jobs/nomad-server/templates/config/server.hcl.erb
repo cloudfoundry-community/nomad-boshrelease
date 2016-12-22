@@ -1,0 +1,11 @@
+name = "<%= name %>/<%= index %>"
+data_dir = "/var/vcap/store/nomad"
+log_level = "<%= p('nomad.log_level') %>"
+enable_syslog = true
+
+server {
+  enabled = true
+  bootstrap_expect = <%= link('nomad_servers').instances.collect { |server| server.address } %>
+  retry_join = <%= link('nomad_servers').instances.collect { |server| server.address } %>
+  rejoin_after_leave = true
+}

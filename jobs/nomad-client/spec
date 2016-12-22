@@ -1,5 +1,5 @@
 ---
-name: nomad
+name: nomad-client
 packages:
 - nomad
 templates:
@@ -9,19 +9,16 @@ templates:
   data/properties.sh.erb: data/properties.sh
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
-  config/server.hcl.erb:  config/server.hcl
-  config/shared.hcl.erb:  config/shared.hcl
   config/client.hcl.erb:  config/client.hcl
+
+consumes:
+- name: nomad_servers
+  type: nomad_servers
+
 properties:
   nomad.log_level:
     description: Log level for nomad
     default: INFO
 
-  nomad.server:
-    description: Run in server mode
-    default: true
-
-  nomad.servers:
-    description: "List of all Nomad Node IP Addresses."
   nomad.meta:
     description: Hash of meta values to pass to a nomad client
