@@ -1,0 +1,15 @@
+---
+releases:
+- name: toolbelt
+  version: 3.3.0
+
+addons:
+- name: toolbelt
+  jobs:
+  - name: toolbelt
+    release: toolbelt
+
+- name: toolbelt-quick
+  jobs:
+  - name: toolbelt-quick
+    release: toolbelt

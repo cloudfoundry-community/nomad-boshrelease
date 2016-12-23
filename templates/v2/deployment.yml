@@ -1,0 +1,66 @@
+---
+name: nomad-deployment
+director_uuid: fb70f16a-4d6f-41f8-bc2e-0181a03dff18
+
+update:
+  serial: false
+  canaries: 1
+  canary_watch_time: 10000-60000
+  max_in_flight: 4
+  update_watch_time: 10000-60000
+
+releases:
+- name: nomad
+  version: latest
+- name: consul
+  version: latest
+- name: docker
+  version: latest
+
+stemcells:
+- alias: default
+  os: ubuntu-trusty
+  version: latest
+
+instance_groups:
+- name: server
+  azs: [z1, z2, z3]
+  instances: 3
+  jobs:
+  - name: nomad-server
+    release: nomad
+  - name: consul
+    release: consul
+    provides:
+      consul_servers: { as: consul_leaders }
+    consumes:
+      consul_servers: { from: consul_leaders }
+  stemcell: default
+  vm_type: medium
+  persistent_disk_pool: medium
+  networks:
+  - name: private
+  properties:
+    consul:
+      server: true
+  update: { serial: true }
+
+- name: node
+  azs: [z1, z2, z3]
+  instances: 3
+  jobs:
+  - name: nomad-client
+    release: nomad
+  - name: docker
+    release: docker
+  - name: consul
+    release: consul
+    consumes:
+      consul_servers: { from: consul_leaders }
+  stemcell: default
+  vm_type: large
+  persistent_disk_pool: medium
+  networks:
+  - name: private
+
+properties: {}
