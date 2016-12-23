@@ -29,6 +29,8 @@ instance_groups:
   jobs:
   - name: nomad-server
     release: nomad
+  - name: nomad-ui
+    release: nomad
   - name: consul
     release: consul
     provides:
