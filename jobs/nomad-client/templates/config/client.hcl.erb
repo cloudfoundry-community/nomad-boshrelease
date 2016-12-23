@@ -9,7 +9,7 @@ client {
 
   options {
     docker.endpoint = "unix:///var/vcap/sys/run/docker/docker.sock"
-    docker.cleanup.image = "false"
+    docker.cleanup.image = "<%= p('nomad.docker.cleanup_image') %>"
   }
 
   <% if_p('nomad.meta') do |meta| %>

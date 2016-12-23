@@ -21,3 +21,7 @@ properties:
 
   nomad.meta:
     description: Hash of meta values to pass to a nomad client
+
+  nomad.docker.cleanup_image:
+    default: true
+    description: Remove image after removing container.
