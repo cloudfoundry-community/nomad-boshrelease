@@ -22,3 +22,7 @@ properties:
   nomad.log_level:
     description: Log level for nomad
     default: INFO
+
+  nomad.leave_on_terminate:
+    default: false
+    description: pecifies if the agent should gracefully leave when receiving the terminate signal. By default, the agent will exit forcefully on any signal

@@ -3,10 +3,18 @@ data_dir = "/var/vcap/store/nomad-client"
 log_level = "<%= p('nomad.log_level') %>"
 enable_syslog = true
 
+leave_on_terminate = <%= p('nomad.leave_on_terminate') %>
+bind_addr = "0.0.0.0"
+
+advertise {
+  http = "<%= spec.address %>:4646"
+  rpc = "<%= spec.address %>:4647"
+  serf = "<%= spec.address %>:4648"
+}
+
 client {
   enabled = true
   servers = <%= link('nomad_servers').instances.collect { |server| server.address } %>
-
   options {
     docker.endpoint = "unix:///var/vcap/sys/run/docker/docker.sock"
     docker.cleanup.image = "<%= p('nomad.docker.cleanup_image') %>"

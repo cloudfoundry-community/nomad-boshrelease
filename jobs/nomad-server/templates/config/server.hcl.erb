@@ -3,6 +3,15 @@ data_dir = "/var/vcap/store/nomad-server"
 log_level = "<%= p('nomad.log_level') %>"
 enable_syslog = true
 
+leave_on_terminate = <%= p('nomad.leave_on_terminate') %>
+bind_addr = "0.0.0.0"
+
+advertise {
+  http = "<%= spec.address %>:4646"
+  rpc = "<%= spec.address %>:4647"
+  serf = "<%= spec.address %>:4648"
+}
+
 server {
   enabled = true
   retry_join = <%= link('nomad_servers').instances.collect { |server| server.address } %>

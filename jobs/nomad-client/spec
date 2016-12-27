@@ -25,3 +25,6 @@ properties:
   nomad.docker.cleanup_image:
     default: true
     description: Remove image after removing container.
+  nomad.leave_on_terminate:
+    default: false
+    description: pecifies if the agent should gracefully leave when receiving the terminate signal. By default, the agent will exit forcefully on any signal

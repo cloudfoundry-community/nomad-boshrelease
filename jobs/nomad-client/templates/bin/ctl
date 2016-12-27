@@ -22,7 +22,6 @@ case $1 in
     exec chpst -u vcap:vcap nomad agent \
          -config ${NOMAD_CONFIG} \
          -network-interface=${NETWORK_INTERFACE} \
-         -bind=${MY_IP}
          >>$LOG_DIR/$JOB_NAME.log 2>&1
 
     ;;
