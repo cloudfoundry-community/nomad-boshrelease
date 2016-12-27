@@ -20,7 +20,7 @@ releases:
 stemcells:
 - alias: default
   os: ubuntu-trusty
-  version: latest
+  version: 3312.9
 
 instance_groups:
 - name: server

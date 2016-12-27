@@ -1,0 +1,58 @@
+---
+azs:
+- name: z1
+  cloud_properties: { zone: europe-west1-b }
+- name: z2
+  cloud_properties: { zone: europe-west1-c }
+- name: z3
+  cloud_properties: { zone: europe-west1-d }
+
+vm_types:
+- name: server
+  cloud_properties:
+    machine_type: n1-standard-2
+    root_disk_type: pd-standard
+    target_pool: servers
+- name: node
+  cloud_properties:
+    machine_type: n1-standard-2
+    root_disk_type: pd-standard
+    target_pool: nodes
+- name: compilation
+  cloud_properties:
+    machine_type: n1-standard-2
+    root_disk_type: pd-standard
+
+disk_types:
+- name: medium
+  disk_size: 3200
+
+networks:
+- name: servers
+  type: manual
+  subnets:
+  - range: 10.4.1.0/24
+    gateway: 10.4.1.1
+    azs: [z1, z2, z3]
+    cloud_properties:
+      network_name: bosh-demo
+      subnetwork_name: bosh-demo-servers
+      tags: [bosh-demo-default]
+- name: nodes
+  type: manual
+  subnets:
+  - range: 10.4.2.0/24
+    gateway: 10.4.2.1
+    azs: [z1, z2, z3]
+    cloud_properties:
+      network_name: bosh-demo
+      subnetwork_name: bosh-demo-nodes
+      ephemeral_external_ip: true
+      tags: [bosh-demo-default]
+
+compilation:
+  workers: 4
+  reuse_compilation_vms: true
+  az: z1
+  vm_type: compilation
+  network: servers
