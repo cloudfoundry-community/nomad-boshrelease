@@ -38,10 +38,10 @@ instance_groups:
     consumes:
       consul_servers: { from: consul_leaders }
   stemcell: default
-  vm_type: medium
+  vm_type: server
   persistent_disk_pool: medium
   networks:
-  - name: private
+  - name: servers
   properties:
     consul:
       server: true
@@ -49,7 +49,7 @@ instance_groups:
 
 - name: node
   azs: [z1, z2, z3]
-  instances: 3
+  instances: 1
   jobs:
   - name: nomad-client
     release: nomad
@@ -60,9 +60,13 @@ instance_groups:
     consumes:
       consul_servers: { from: consul_leaders }
   stemcell: default
-  vm_type: large
+  vm_type: node
   persistent_disk_pool: medium
   networks:
-  - name: private
+  - name: nodes
 
-properties: {}
+properties:
+  consul:
+    leave_on_terminate: true
+  nomad:
+    leave_on_terminate: true

@@ -5,37 +5,31 @@ azs:
 - name: z3
 
 vm_types:
-- name: medium
-  cloud_properties: {}
-- name: large
-  cloud_properties: {}
+- name: server
+- name: node
+- name: compilation
 
 disk_types:
 - name: medium
   disk_size: 3200
-  cloud_properties: {}
 
 networks:
-- name: private
+- name: servers
   type: manual
   subnets:
-  - range: 10.244.10.0/24
-    gateway: 10.244.10.1
-    az: z1
-    cloud_properties: {}
-  - range: 10.244.11.0/24
-    gateway: 10.244.11.1
-    az: z2
-    cloud_properties: {}
-  - range: 10.244.12.0/24
-    gateway: 10.244.12.1
-    az: z3
-    cloud_properties: {}
+  - range: 10.244.1.0/24
+    gateway: 10.244.1.1
+    azs: [z1, z2, z3]
+- name: nodes
+  type: manual
+  subnets:
+  - range: 10.244.2.0/24
+    gateway: 10.244.2.1
+    azs: [z1, z2, z3]
 
 compilation:
-  workers: 2
+  workers: 4
   reuse_compilation_vms: true
   az: z1
-  vm_type: medium
-  network: private
-
+  vm_type: compilation
+  network: servers
