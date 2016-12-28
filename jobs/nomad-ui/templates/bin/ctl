@@ -17,7 +17,7 @@ case $1 in
     # store pid in $PIDFILE
     echo $$ > $PIDFILE
 
-    exec chpst -u vcap:vcap nomad-ui -address http://<%= link('nomad_servers').instances.first.address %>:4646 \
+    exec chpst -u vcap:vcap hashi-ui \
          >>$LOG_DIR/$JOB_NAME.log 2>&1
 
     ;;

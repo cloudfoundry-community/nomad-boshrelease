@@ -9,7 +9,4 @@ templates:
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
 
-consumes:
-- name: nomad_servers
-  type: nomad_servers
 properties: {}
