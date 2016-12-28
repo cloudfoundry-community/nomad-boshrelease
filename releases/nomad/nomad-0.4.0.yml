@@ -1,0 +1,28 @@
+---
+packages:
+- name: nomad
+  version: a63ddf1b07f8c6817d0225bc01a4de7f747afbbd
+  fingerprint: a63ddf1b07f8c6817d0225bc01a4de7f747afbbd
+  sha1: 062ee9c7842767f27842488c32b2876f981f1120
+  dependencies: []
+jobs:
+- name: nomad-client
+  version: 183ad5ee39e3c08cf39f3d6e618ac5edfa0fb182
+  fingerprint: 183ad5ee39e3c08cf39f3d6e618ac5edfa0fb182
+  sha1: 224d35a79b24d8cf7d500c7dac4efe78cf13de5e
+- name: nomad-server
+  version: 9fb738df3c0963f9192a1021224ea561912e8d8a
+  fingerprint: 9fb738df3c0963f9192a1021224ea561912e8d8a
+  sha1: c01a366ab66a9e20bf99db9999c104607308d328
+- name: nomad-ui
+  version: 3ff56a7ecf6033560c6db6dbe1116c7f3d03ad24
+  fingerprint: 3ff56a7ecf6033560c6db6dbe1116c7f3d03ad24
+  sha1: 0c5e160294418d2e3b0dd6da3ce2fcb2c0cf3fe1
+license:
+  version: 79267db2e7516e504dfe773afdfd03a5ecfaf43a
+  fingerprint: 79267db2e7516e504dfe773afdfd03a5ecfaf43a
+  sha1: 673894d52bad5128e991522c13ad28faed745a1a
+commit_hash: e27a5420
+uncommitted_changes: true
+name: nomad
+version: 0.4.0
