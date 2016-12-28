@@ -9,6 +9,8 @@ templates:
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
   config/client.hcl.erb:  config/client.hcl
+  bin/post-start: bin/post-start
+  bin/drain: bin/drain
 
 consumes:
 - name: nomad_servers

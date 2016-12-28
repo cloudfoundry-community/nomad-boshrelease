@@ -1,0 +1,13 @@
+#!/bin/bash
+
+export PATH=$PATH:/var/vcap/packages/nomad/bin/
+
+nomad node-drain -enable -self
+
+sleep 5
+
+# Drain script requires printing 0 to stdout followed by a newline
+echo 0
+echo
+
+exit 0
