@@ -3,7 +3,7 @@ nomad/nomad-ui:
   object_id: 50938f92-a203-42ae-95c0-ca4ba24cd746
   sha: b8f3a78cddeaf1b438144e6b823d20000e53be09
   size: 11895512
-nomad/nomad_0.4.1_linux_amd64.zip:
-  object_id: 8e30ccc6-f599-4807-b042-98c42e51b2a0
-  sha: 33ebb18daf38621e1c5e1d5e98b5eb9dbc3446c9
-  size: 7925209
+nomad/nomad_0.5.0_linux_amd64.zip:
+  object_id: d3a4fe62-ef9c-4cd6-a66e-7e797e162220
+  sha: 4a034c3542687c8add69b89d072b3a054d7ce7cf
+  size: 8602190
