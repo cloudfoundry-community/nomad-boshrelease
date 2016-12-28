@@ -34,9 +34,9 @@ instance_groups:
   - name: consul
     release: consul
     provides:
-      consul_servers: { as: consul_leaders }
+      consul_servers: { as: consul }
     consumes:
-      consul_servers: { from: consul_leaders }
+      consul_servers: { from: consul }
   stemcell: default
   vm_type: server
   persistent_disk_pool: medium
@@ -58,7 +58,7 @@ instance_groups:
   - name: consul
     release: consul
     consumes:
-      consul_servers: { from: consul_leaders }
+      consul_servers: { from: consul }
   stemcell: default
   vm_type: node
   persistent_disk_pool: medium
