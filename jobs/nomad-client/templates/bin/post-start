@@ -2,4 +2,4 @@
 
 export PATH=$PATH:/var/vcap/packages/nomad/bin/
 
-nomad node-drain -disable -self
+nomad node-drain -disable -yes -self

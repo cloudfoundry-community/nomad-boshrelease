@@ -2,7 +2,7 @@
 
 export PATH=$PATH:/var/vcap/packages/nomad/bin/
 
-nomad node-drain -enable -self
+nomad node-drain -enable -yes -self
 
 sleep 5
 
