@@ -64,6 +64,10 @@ instance_groups:
   persistent_disk_pool: medium
   networks:
   - name: nodes
+  properties:
+    nomad:
+      docker:
+        cleanup_image: false
 
 properties:
   consul:
