@@ -1,5 +1,0 @@
-check process nomad-ui
-  with pidfile /var/vcap/sys/run/nomad-ui/nomad-ui.pid
-  start program "/var/vcap/jobs/nomad-ui/bin/monit_debugger nomad_ui_ctl '/var/vcap/jobs/nomad-ui/bin/ctl start'"
-  stop program "/var/vcap/jobs/nomad-ui/bin/monit_debugger nomad_ui_ctl '/var/vcap/jobs/nomad-ui/bin/ctl stop'"
-  group vcap

@@ -13,9 +13,13 @@ jobs:
     templates:
     - name: consul
       release: consul
+      provides:
+        consul_servers: { as: consul_leaders }
+      consumes:
+          consul_servers: { from: consul_leaders }
     - name: nomad-server
       release: nomad
-    - name: nomad-ui
+    - name: hashi-ui
       release: nomad
     instances: 1
     persistent_disk: 3200
@@ -31,6 +35,8 @@ jobs:
       release: docker
     - name: consul
       release: consul
+      consumes:
+        consul_servers: { from: consul_leaders }
     - name: nomad-client
       release: nomad
     instances: 1
@@ -44,8 +50,5 @@ jobs:
 networks: (( param "please set networks" ))
 
 properties:
-  consul:
-    leave_on_terminate: true
-    join_hosts: (( grab jobs.server.networks.nomad1.static_ips ))
   nomad:
     leave_on_terminate: true

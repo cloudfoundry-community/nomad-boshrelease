@@ -39,9 +39,3 @@ networks:
     gateway: 10.244.234.1
     static:
       - 10.244.234.2 - 10.244.234.60
-
-properties:
-  nomad:
-    log_level: DEBUG
-  gorb:
-    debug: true

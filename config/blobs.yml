@@ -4,6 +4,10 @@ nomad/nomad_0.5.2_linux_amd64.zip:
   sha: 7fefbe51a10f321d832e8dc3c250f299a4b63784
   size: 8615092
 nomad/hashi-ui:
-  object_id: 952bd329-b589-4bff-a079-c56c81fddffd
-  sha: 0e6ccf6ccb5b56d4954c640d75aee81e6cdfbfe8
-  size: 28833785
+  object_id: 113f3f42-0095-43b7-9a64-bb6f93611fbf
+  sha: 7367908649d4a391f8d846bc2014a3cb8f00e623
+  size: 29080724
+nomad/nomad_0.5.4_linux_amd64.zip:
+  object_id: 13f1789d-dfcd-4612-8cb9-8ceeb8510e10
+  sha: b136b40425a6ff5487283ae9328e577fdfc9832c
+  size: 8809652

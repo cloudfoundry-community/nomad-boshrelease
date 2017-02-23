@@ -1,0 +1,5 @@
+check process hashi-ui
+  with pidfile /var/vcap/sys/run/hashi-ui/hashi-ui.pid
+  start program "/var/vcap/jobs/hashi-ui/bin/monit_debugger hashi_ui_ctl '/var/vcap/jobs/hashi-ui/bin/ctl start'"
+  stop program "/var/vcap/jobs/hashi-ui/bin/monit_debugger hashi_ui_ctl '/var/vcap/jobs/hashi-ui/bin/ctl stop'"
+  group vcap
