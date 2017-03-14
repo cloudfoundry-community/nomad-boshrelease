@@ -6,20 +6,22 @@ set -u # report the usage of uninitialized variables
 # Setup env vars and folders for the webapp_ctl script
 source /var/vcap/jobs/nomad-client/helpers/ctl_setup.sh 'nomad-client'
 
-export PORT=${PORT:-5000}
-export LANG=en_US.UTF-8
-
 case $1 in
 
   start)
     pid_guard $PIDFILE $JOB_NAME
+    if [ ! -f "/root/.ssh/known_hosts" ]
+    then
+      mkdir /root/.ssh/
+      ssh-keyscan -t rsa github.com >> /root/.ssh/known_hosts
+    fi
 
     # store pid in $PIDFILE
     echo $$ > $PIDFILE
 
     echo "1" >/proc/sys/net/ipv4/ip_forward
 
-    exec chpst -u vcap:vcap nomad agent \
+    exec nomad agent \
          -config ${NOMAD_CONFIG} \
          -network-interface=${NETWORK_INTERFACE} \
          >>$LOG_DIR/$JOB_NAME.log 2>&1

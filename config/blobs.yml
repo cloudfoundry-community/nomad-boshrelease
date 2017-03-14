@@ -11,3 +11,11 @@ nomad/nomad_0.5.4_linux_amd64.zip:
   object_id: 13f1789d-dfcd-4612-8cb9-8ceeb8510e10
   sha: b136b40425a6ff5487283ae9328e577fdfc9832c
   size: 8809652
+git/git-2.12.0.tar.gz:
+  object_id: 5fd02b20-686a-4cd0-9ce7-c414ac3482ef
+  sha: 4be31c6c5ecf77bc64f6cdf075171a5f7e0b7c44
+  size: 6381790
+nomad/nomad_0.5.5-rc2_linux_amd64.zip:
+  object_id: dd73a115-7162-46b3-b7b9-0e7ad798a63b
+  sha: d3a9cad27c248624999878f68e7d82d6345f5274
+  size: 9200430

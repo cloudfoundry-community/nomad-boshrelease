@@ -14,11 +14,19 @@ advertise {
 
 client {
   enabled = true
+  no_host_uuid = true
   servers = <%= link('nomad_servers').instances.collect { |server| server.address } %>
   options {
     docker.endpoint = "unix:///var/vcap/sys/run/docker/docker.sock"
     docker.cleanup.image = "<%= p('nomad.docker.cleanup_image') %>"
+    <% if p('nomad.docker.privileged') %>
+    docker.privileged.enabled = true
+    <% end %>
   }
+
+  <% if p('nomad.node_class', nil) %>
+  node_class = "<%= p('nomad.node_class') %>"
+  <% end %>
 
   <% if_p('nomad.meta') do |meta| %>
   meta {

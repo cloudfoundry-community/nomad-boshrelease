@@ -1,0 +1,13 @@
+set -e -x
+export VERSION=2.12.0
+
+BUILD_FLAGS="NO_TCLTK=Yes NO_EXPAT=Yes"
+
+cd git
+
+tar -zxf git-${VERSION}.tar.gz
+
+cd git-${VERSION}
+
+make prefix=${BOSH_INSTALL_TARGET} ${BUILD_FLAGS} all
+make prefix=${BOSH_INSTALL_TARGET} ${BUILD_FLAGS} install

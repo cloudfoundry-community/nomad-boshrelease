@@ -25,4 +25,7 @@ properties:
 
   nomad.leave_on_terminate:
     default: false
-    description: pecifies if the agent should gracefully leave when receiving the terminate signal. By default, the agent will exit forcefully on any signal
+    description: Specifies if the agent should gracefully leave when receiving the terminate signal. By default, the agent will exit forcefully on any signal
+
+  nomad.encrypt:
+    description: encrypt string for nomad server

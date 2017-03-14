@@ -6,7 +6,7 @@ update:
   max_in_flight: 3
   canary_watch_time: 1000-30000
   update_watch_time: 1000-30000
-  serial: false
+  serial: true
 
 jobs:
   - name: server
@@ -26,6 +26,8 @@ jobs:
     resource_pool: small_z1
     networks: (( param "please set server networks" ))
     properties:
+      nomad:
+        encrypt: 2eUZpNZS8MuNTQOJqferpA==
       consul:
         server: true
 

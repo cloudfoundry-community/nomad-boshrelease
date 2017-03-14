@@ -1,11 +1,12 @@
 set -e # exit immediately if a simple command exits with a non-zero status
 set -u # report the usage of uninitialized variables
 
-VERSION=0.5.2
-cd nomad
+VERSION=0.5.5-rc2
+pushd nomad
 unzip nomad_${VERSION}_linux_amd64.zip
 mkdir $BOSH_INSTALL_TARGET/bin
 cp -a nomad $BOSH_INSTALL_TARGET/bin
+
 
 chmod +x hashi-ui
 cp hashi-ui $BOSH_INSTALL_TARGET/bin

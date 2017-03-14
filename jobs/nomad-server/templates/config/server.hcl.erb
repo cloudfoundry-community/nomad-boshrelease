@@ -17,4 +17,5 @@ server {
   retry_join = <%= link('nomad_servers').instances.collect { |server| server.address } %>
   bootstrap_expect = <%= link('nomad_servers').instances.size %>
   rejoin_after_leave = true
+  encrypt = "<%= p('nomad.encrypt') %>"
 }

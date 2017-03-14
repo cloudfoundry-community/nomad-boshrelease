@@ -2,6 +2,7 @@
 name: nomad-client
 packages:
 - nomad
+- git
 templates:
   bin/ctl: bin/ctl
   bin/monit_debugger: bin/monit_debugger
@@ -9,7 +10,7 @@ templates:
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
   config/client.hcl.erb:  config/client.hcl
-  bin/post-start: bin/post-start
+  bin/post-deploy: bin/post-deploy
   bin/drain: bin/drain
 
 consumes:
@@ -21,12 +22,18 @@ properties:
     description: Log level for nomad
     default: INFO
 
+  nomad.node_class:
+    description: string used to logically group nodes
+
   nomad.meta:
     description: Hash of meta values to pass to a nomad client
 
   nomad.docker.cleanup_image:
     default: true
     description: Remove image after removing container.
+  nomad.docker.privileged:
+    default: false
+    description: Allow docker images to use host network
   nomad.leave_on_terminate:
     default: false
     description: pecifies if the agent should gracefully leave when receiving the terminate signal. By default, the agent will exit forcefully on any signal
