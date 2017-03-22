@@ -28,11 +28,12 @@ client {
   node_class = "<%= p('nomad.node_class') %>"
   <% end %>
 
-  <% if_p('nomad.meta') do |meta| %>
   meta {
+    "node_name" = "<%= spec.job.name %>/<%= spec.index %>"
+    <% if_p('nomad.meta') do |meta| %>
     <% meta.each do |key, value| %>
     "<%= key %>" = "<%= value %>"
     <% end %>
+    <% end %>
   }
-  <% end %>
 }
