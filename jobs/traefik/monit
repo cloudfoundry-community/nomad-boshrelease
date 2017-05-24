@@ -1,0 +1,5 @@
+check process traefik
+  with pidfile /var/vcap/sys/run/traefik/traefik.pid
+  start program "/var/vcap/jobs/traefik/bin/monit_debugger traefik_ctl '/var/vcap/jobs/traefik/bin/ctl start'"
+  stop program "/var/vcap/jobs/traefik/bin/monit_debugger traefik_ctl '/var/vcap/jobs/traefik/bin/ctl stop'"
+  group vcap

@@ -1,0 +1,22 @@
+---
+name: traefik
+packages:
+- traefik
+templates:
+  bin/ctl: bin/ctl
+  bin/monit_debugger: bin/monit_debugger
+  config/traefik.toml: config/traefik.toml
+  config/ssl/tls.key: config/ssl/tls.key
+  config/ssl/tls.crt: config/ssl/tls.crt
+  data/properties.sh.erb: data/properties.sh
+  helpers/ctl_setup.sh: helpers/ctl_setup.sh
+  helpers/ctl_utils.sh: helpers/ctl_utils.sh
+
+properties:
+  log_level:
+    description: "log level"
+    default: "INFO"
+  ssl_key:
+    description: "SSL Key for traefik"
+  ssl_cert:
+    description: "SSL Cert for traefik"
