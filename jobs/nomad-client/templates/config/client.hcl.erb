@@ -7,9 +7,9 @@ leave_on_terminate = <%= p('nomad.leave_on_terminate') %>
 bind_addr = "0.0.0.0"
 
 advertise {
-  http = "<%= spec.address %>:4646"
-  rpc = "<%= spec.address %>:4647"
-  serf = "<%= spec.address %>:4648"
+  http = "<%= spec.ip %>:4646"
+  rpc = "<%= spec.ip %>:4647"
+  serf = "<%= spec.ip %>:4648"
 }
 
 client {
