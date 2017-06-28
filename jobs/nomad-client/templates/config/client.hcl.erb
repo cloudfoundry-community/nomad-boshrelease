@@ -12,6 +12,15 @@ advertise {
   serf = "<%= spec.ip %>:4648"
 }
 
+consul {
+<% if_p('nomad.consul.ssl_ca', 'nomad.consul.ssl_cert', 'nomad.consul.ssl_key') do || %>
+  ssl = true
+  ca_file = "/var/vcap/jobs/nomad/ssl/consul_ca_certificate.pem"
+  cert_file = "/var/vcap/jobs/nomad/ssl/consul_certificate.pem"
+  key_file = "/var/vcap/jobs/nomad/ssl/consul_key.pem"
+<% end %>
+}
+
 client {
   enabled = true
   no_host_uuid = true

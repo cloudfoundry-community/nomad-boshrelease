@@ -11,6 +11,9 @@ templates:
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
   config/client.hcl.erb:  config/client.hcl
   bin/post-deploy: bin/post-deploy
+  ssl/consul_ca_certificate.pem: ssl/consul_ca_certificate.pem
+  ssl/consul_certificate.pem: ssl/consul_certificate.pem
+  ssl/consul_key.pem: ssl/consul_key.pem
   bin/drain: bin/drain
 
 consumes:
