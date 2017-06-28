@@ -1,7 +1,7 @@
 ---
 name: hashi-ui
 packages:
-- nomad
+- hashi-ui
 templates:
   bin/ctl: bin/ctl
   bin/monit_debugger: bin/monit_debugger

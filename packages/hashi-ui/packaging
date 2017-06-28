@@ -1,0 +1,8 @@
+set -e # exit immediately if a simple command exits with a non-zero status
+set -u # report the usage of uninitialized variables
+
+pushd hashi-ui
+mkdir $BOSH_INSTALL_TARGET/bin
+
+chmod +x hashi-ui
+cp hashi-ui $BOSH_INSTALL_TARGET/bin

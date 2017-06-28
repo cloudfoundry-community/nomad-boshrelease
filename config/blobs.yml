@@ -2,6 +2,10 @@ git/git-2.12.0.tar.gz:
   size: 6381790
   object_id: 5fd02b20-686a-4cd0-9ce7-c414ac3482ef
   sha: 4be31c6c5ecf77bc64f6cdf075171a5f7e0b7c44
+hashi-ui/hashi-ui:
+  size: 29115215
+  object_id: 206cd235-34a7-427b-407f-136b2cf17a54
+  sha: 6b66869241d07f94c678e8acf55df417809d8b78
 nomad/hashi-ui:
   size: 29115215
   object_id: 131920dc-3d11-4f15-75d9-a04e40a65dcb
