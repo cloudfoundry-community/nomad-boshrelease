@@ -33,3 +33,13 @@ server {
   rejoin_after_leave = true
   encrypt = "<%= p('nomad.encrypt') %>"
 }
+
+tls {
+<% if_p('nomad.ssl_ca', 'nomad.ssl_cert', 'nomad.ssl_key') do || %>
+  http = true
+  rpc = true
+  ca_file = "/var/vcap/jobs/nomad-server/ssl/ca_certificate.pem"
+  cert_file = "/var/vcap/jobs/nomad-server/ssl/certificate.pem"
+  key_file = "/var/vcap/jobs/nomad-server/ssl/key.pem"
+<% end %>
+}
