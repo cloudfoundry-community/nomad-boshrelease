@@ -22,6 +22,10 @@ consumes:
   type: nomad_servers
 
 properties:
+  nomad.datacenter:
+    description: The datacenter nomad is deployed to
+  nomad.region:
+    description: The region nomad is deployed to
   nomad.log_level:
     description: Log level for nomad
     default: INFO
