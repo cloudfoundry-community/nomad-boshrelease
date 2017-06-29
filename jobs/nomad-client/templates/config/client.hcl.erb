@@ -6,8 +6,12 @@ enable_syslog = true
 leave_on_terminate = <%= p('nomad.leave_on_terminate') %>
 bind_addr = "0.0.0.0"
 
-datacenter = "<%= link('nomad_servers').p('nomad.datacenter') %>"
-region = "<%= link('nomad_servers').p('nomad.region') %>"
+<% link('nomad_servers').if_p('nomad.datacenter') do |dc| %>
+datacenter = "<%= dc %>"
+<% end %>
+<% link('nomad_servers').if_p('nomad.region') do |region| %>
+region = "<%= region %>"
+<% end %>
 
 advertise {
   http = "<%= spec.ip %>:4646"
