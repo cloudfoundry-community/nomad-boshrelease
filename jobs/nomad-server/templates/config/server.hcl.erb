@@ -41,5 +41,6 @@ tls {
   ca_file = "/var/vcap/jobs/nomad-server/ssl/ca_certificate.pem"
   cert_file = "/var/vcap/jobs/nomad-server/ssl/certificate.pem"
   key_file = "/var/vcap/jobs/nomad-server/ssl/key.pem"
+  verify_server_hostname = <%= p('nomad.verify_server_hostname') %>
 <% end %>
 }
