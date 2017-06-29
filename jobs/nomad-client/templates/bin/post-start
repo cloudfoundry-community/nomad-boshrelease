@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+export JOB_DIR=/var/vcap/jobs/nomad-client
+export PATH=$PATH:/var/vcap/packages/nomad/bin
+source ${JOB_DIR}/data/properties.sh
+
+nomad node-drain -disable -yes -self

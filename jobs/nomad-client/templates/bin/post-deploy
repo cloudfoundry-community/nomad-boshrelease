@@ -1,5 +1,0 @@
-#!/bin/bash
-
-export PATH=$PATH:/var/vcap/packages/nomad/bin/
-
-nomad node-drain -disable -yes -self

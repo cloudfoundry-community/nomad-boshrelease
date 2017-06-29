@@ -6,6 +6,9 @@ enable_syslog = true
 leave_on_terminate = <%= p('nomad.leave_on_terminate') %>
 bind_addr = "0.0.0.0"
 
+datacenter = "<%= link('nomad_servers').p('nomad.datacenter') %>"
+region = "<%= link('nomad_servers').p('nomad.region') %>"
+
 advertise {
   http = "<%= spec.ip %>:4646"
   rpc = "<%= spec.ip %>:4647"
@@ -15,9 +18,9 @@ advertise {
 consul {
 <% if_p('nomad.consul.ssl_ca', 'nomad.consul.ssl_cert', 'nomad.consul.ssl_key') do || %>
   ssl = true
-  ca_file = "/var/vcap/jobs/nomad/ssl/consul_ca_certificate.pem"
-  cert_file = "/var/vcap/jobs/nomad/ssl/consul_certificate.pem"
-  key_file = "/var/vcap/jobs/nomad/ssl/consul_key.pem"
+  ca_file = "/var/vcap/jobs/nomad-client/ssl/consul_ca_certificate.pem"
+  cert_file = "/var/vcap/jobs/nomad-client/ssl/consul_certificate.pem"
+  key_file = "/var/vcap/jobs/nomad-client/ssl/consul_key.pem"
 <% end %>
 }
 
@@ -25,6 +28,8 @@ client {
   enabled = true
   no_host_uuid = true
   servers = <%= link('nomad_servers').instances.collect { |server| server.address } %>
+  max_kill_timeout = "<%= p('nomad.max_kill_timeout') %>s"
+
   options {
     docker.endpoint = "unix:///var/vcap/sys/run/docker/docker.sock"
     docker.cleanup.image = "<%= p('nomad.docker.cleanup_image') %>"
@@ -45,4 +50,15 @@ client {
     <% end %>
     <% end %>
   }
+}
+
+tls {
+<% if_p('nomad.ssl_ca', 'nomad.ssl_cert', 'nomad.ssl_key') do || %>
+  http = true
+  rpc = true
+  ca_file = "/var/vcap/jobs/nomad-client/ssl/ca_certificate.pem"
+  cert_file = "/var/vcap/jobs/nomad-client/ssl/certificate.pem"
+  key_file = "/var/vcap/jobs/nomad-client/ssl/key.pem"
+  verify_server_hostname = <%= p('nomad.verify_server_hostname') %>
+<% end %>
 }

@@ -14,5 +14,12 @@ export NOMAD_CONFIG=${JOB_DIR}/config/client.hcl
 # Try to find out the network-interface to bind to from ip address
 # otherwise nomad will tend to use docker0 interface
 # and containers will not be accessible via the jobs ip
-export MY_IP=<%= spec.address %>
+export MY_IP=<%= spec.ip %>
 export NETWORK_INTERFACE=$(ifconfig | grep -B 1 ${MY_IP} | grep -v inet | awk '{ print $1 }')
+
+<% if_p('nomad.ssl_ca', 'nomad.ssl_cert', 'nomad.ssl_key') do || %>
+export NOMAD_CAPATH=${JOB_DIR}/ssl/ca_certificate.pem
+export NOMAD_CLIENT_CERT=${JOB_DIR}/ssl/certificate.pem
+export NOMAD_CLIENT_KEY=${JOB_DIR}/ssl/key.pem
+export NOMAD_ADDR="https://127.0.0.1:4646"
+<% end %>

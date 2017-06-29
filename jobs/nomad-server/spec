@@ -19,6 +19,9 @@ templates:
 provides:
 - name: nomad_servers
   type: nomad_servers
+  properties:
+  - nomad.datacenter
+  - nomad.region
 
 consumes:
 - name: nomad_servers
