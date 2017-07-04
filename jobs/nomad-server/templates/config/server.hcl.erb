@@ -44,3 +44,18 @@ tls {
   verify_server_hostname = <%= p('nomad.verify_server_hostname') %>
 <% end %>
 }
+
+<% if p('nomad.vault.token', nil) %>
+vault {
+  enabled     = true
+  address     = "<%= p('nomad.vault.address') %>"
+  token       = "<%= p('nomad.vault.token') %>"
+  create_from_role = "<%= p('nomad.vault.create_from_role') %>"
+
+<% if_p('nomad.vault.ssl_ca', 'nomad.vault.ssl_cert', 'nomad.vault.ssl_key') do || %>
+  ca_file = "/var/vcap/jobs/nomad-server/ssl/vault_ca_certificate.pem"
+  cert_file = "/var/vcap/jobs/nomad-server/ssl/vault_certificate.pem"
+  key_file = "/var/vcap/jobs/nomad-server/ssl/vault_key.pem"
+<% end %>
+}
+<% end %>

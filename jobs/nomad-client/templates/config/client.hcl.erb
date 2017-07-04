@@ -66,3 +66,14 @@ tls {
   verify_server_hostname = <%= p('nomad.verify_server_hostname') %>
 <% end %>
 }
+
+vault {
+  enabled     = true
+  address     = "<%= p('nomad.vault.address') %>"
+
+<% if_p('nomad.vault.ssl_ca', 'nomad.vault.ssl_cert', 'nomad.vault.ssl_key') do || %>
+  ca_file = "/var/vcap/jobs/nomad-client/ssl/vault_ca_certificate.pem"
+  cert_file = "/var/vcap/jobs/nomad-client/ssl/vault_certificate.pem"
+  key_file = "/var/vcap/jobs/nomad-client/ssl/vault_key.pem"
+<% end %>
+}
