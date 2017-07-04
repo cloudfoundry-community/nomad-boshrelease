@@ -33,13 +33,13 @@ path = "/traefik"
 [file]
 
 [frontends]
-  [frontends.web]
-  backend = "web"
+  [frontends.traefik]
+  backend = "traefik"
   entrypoints = ["admin"]
-    [frontends.web.routes.traefik]
+    [frontends.traefik.routes.traefik]
     rule = "PathPrefix:/traefik"
 
 [backends]
-  [backends.web]
-    [backends.web.servers.local]
+  [backends.traefik]
+    [backends.traefik.servers.local]
     url = "http://127.0.0.1:3000"
