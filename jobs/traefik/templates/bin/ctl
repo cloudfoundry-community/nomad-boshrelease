@@ -17,7 +17,7 @@ case $1 in
     # store pid in $PIDFILE
     echo $$ > $PIDFILE
 
-    exec /var/vcap/packages/traefik/bin/traefik --web \
+    exec /var/vcap/packages/traefik/bin/traefik \
          -c /var/vcap/jobs/traefik/config/traefik.toml \
          >>$LOG_DIR/$JOB_NAME.log 2>&1
 
