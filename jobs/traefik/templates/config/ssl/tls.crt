@@ -1,1 +1,1 @@
-<%= p("ssl_cert", "") %>
+<%= p("traefik.ssl_cert", "") %>

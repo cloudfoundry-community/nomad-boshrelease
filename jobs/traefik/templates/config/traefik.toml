@@ -1,5 +1,5 @@
 
-logLevel = "<%= p("log_level") %>"
+logLevel = "<%= p("traefik.log_level") %>"
 
 [consulCatalog]
 endpoint = "consul.service.consul:8500"

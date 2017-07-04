@@ -13,10 +13,10 @@ templates:
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
 
 properties:
-  log_level:
+  traefik.log_level:
     description: "log level"
     default: "INFO"
-  ssl_key:
+  traefik.ssl_key:
     description: "SSL Key for traefik"
-  ssl_cert:
+  traefik.ssl_cert:
     description: "SSL Cert for traefik"
