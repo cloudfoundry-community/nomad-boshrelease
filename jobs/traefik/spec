@@ -19,6 +19,9 @@ properties:
   traefik.admin.users:
     description: "List of http-basic authenticated users to the 'admin' entryPoint. Eg: \"test:$apr1$H6uskkkW$IgXLP6ewTrSuBkTrqE8wj/\""
     default: ["admin:$apr1$Og233Ear$9bSDMdjlw8LxRkCGeRrAz/"]
+  traefik.consul_addr:
+    description: "Complete url to reach consul"
+    default: "http://localhost:8500"
   traefik.ssl_key:
     description: "SSL Key for traefik"
   traefik.ssl_cert:

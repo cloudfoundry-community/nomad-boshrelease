@@ -1,9 +1,9 @@
 logLevel = "<%= p("traefik.log_level") %>"
+defaultEntryPoints = ["http","https"]
 
 [consulCatalog]
-endpoint = "consul.service.consul:8500"
+endpoint = "<%= p('traefik.consul_addr') %>"
 
-defaultEntryPoints = ["http","https"]
 [entryPoints]
   [entryPoints.http]
   address = ":80"
@@ -28,7 +28,6 @@ defaultEntryPoints = ["http","https"]
 
 [web]
 address = "127.0.0.1:3000"
-path = "/traefik"
 
 [file]
 
@@ -37,9 +36,17 @@ path = "/traefik"
   backend = "traefik"
   entrypoints = ["admin"]
     [frontends.traefik.routes.traefik]
-    rule = "PathPrefix:/traefik"
+    rule = "PathPrefixStrip: /traefik"
+  [frontends.consul]
+  backend = "consul"
+  entrypoints = ["admin"]
+    [frontends.consul.routes.consul]
+    rule = "PathPrefix: /ui, /v1"
 
 [backends]
   [backends.traefik]
     [backends.traefik.servers.local]
     url = "http://127.0.0.1:3000"
+  [backends.consul]
+    [backends.consul.servers.local]
+    url = "<%= p('traefik.consul_addr') %>"
