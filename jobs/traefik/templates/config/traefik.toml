@@ -37,13 +37,11 @@ address = "127.0.0.1:3000"
   [frontends.traefik]
   backend = "traefik"
   entrypoints = ["admin"]
-    [frontends.traefik.routes.traefik]
-    rule = "PathPrefixStrip: /traefik"
   [frontends.consul]
   backend = "consul"
   entrypoints = ["admin"]
     [frontends.consul.routes.consul]
-    rule = "PathPrefix: /ui, /v1"
+    rule = "HostRegexp: consul.{domain:.*}"
 
 [backends]
   [backends.traefik]
