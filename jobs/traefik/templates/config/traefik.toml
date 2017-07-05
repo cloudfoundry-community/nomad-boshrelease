@@ -3,6 +3,8 @@ defaultEntryPoints = ["http","https"]
 
 [consulCatalog]
 endpoint = "<%= p('traefik.consul_addr') %>"
+watch = true
+constraints = ["tag==enabled"]
 
 [entryPoints]
   [entryPoints.http]
