@@ -1,0 +1,47 @@
+---
+packages:
+- name: git
+  version: 6274664e675e8bee458b52c67d271e6777a8bbea
+  fingerprint: 6274664e675e8bee458b52c67d271e6777a8bbea
+  sha1: e1d0c29906a315eb9194ca93629e0112d7c6c83a
+  dependencies: []
+- name: hashi-ui
+  version: ad9a66f79c0af69764687e69ef5d3451f55e9bf9
+  fingerprint: ad9a66f79c0af69764687e69ef5d3451f55e9bf9
+  sha1: b33b3f10bf4b626cd9b93aaf6fec904231972ed6
+  dependencies: []
+- name: nomad
+  version: 6de2537c59a938d25fcec9a037b9596194998635
+  fingerprint: 6de2537c59a938d25fcec9a037b9596194998635
+  sha1: ccfcf0ad3b50bce590d1e3435e9c453fc201440c
+  dependencies: []
+- name: traefik
+  version: 8b165ffa2e6183939019b2c7d319332b1e78509d
+  fingerprint: 8b165ffa2e6183939019b2c7d319332b1e78509d
+  sha1: 8ce70b563300f55990ffa5bc06edd11bb55aab11
+  dependencies: []
+jobs:
+- name: hashi-ui
+  version: b1190f1387ada0d843d6086461478cc87e319262
+  fingerprint: b1190f1387ada0d843d6086461478cc87e319262
+  sha1: aea4cc9032bb20978c65b09b2580a794a19d569e
+- name: nomad-client
+  version: b2cf25668b919b9f5b2a0a208e1b6d011253dfd5
+  fingerprint: b2cf25668b919b9f5b2a0a208e1b6d011253dfd5
+  sha1: 918b82b65e978cbabc8c5da030fbad5d7095cbe1
+- name: nomad-server
+  version: 6b15d215abf58e96a7218a943daea3973c4a1748
+  fingerprint: 6b15d215abf58e96a7218a943daea3973c4a1748
+  sha1: 4ac4522add7459af46b93a253a0132b9898049b3
+- name: traefik
+  version: 122c1dd292309f1a03f95d0c3056ae3d557a4bde
+  fingerprint: 122c1dd292309f1a03f95d0c3056ae3d557a4bde
+  sha1: b19481ebcd83005ce61ac6ef00f7068e3c5cd4e9
+license:
+  version: 79267db2e7516e504dfe773afdfd03a5ecfaf43a
+  fingerprint: 79267db2e7516e504dfe773afdfd03a5ecfaf43a
+  sha1: 673894d52bad5128e991522c13ad28faed745a1a
+commit_hash: ed07baca
+uncommitted_changes: true
+name: nomad
+version: 0.7.0
