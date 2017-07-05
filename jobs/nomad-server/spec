@@ -42,7 +42,12 @@ properties:
   nomad.leave_on_terminate:
     default: false
     description: Specifies if the agent should gracefully leave when receiving the terminate signal. By default, the agent will exit forcefully on any signal
-
+  nomad.node_gc_threshold:
+    description: 'Specifies how long a node must be in a terminal state before it is garbage collected and purged from the system. This is specified using a label suffix like "30s" or "1h".'
+    default: "24h"
+  nomad.job_gc_threshold:
+    description: 'Specifies the minimum time a job must be in the terminal state before it is eligible for garbage collection. This is specified using a label suffix like "30s" or "1h"'
+    default: "4h"
   nomad.encrypt:
     description: encrypt string for nomad server
   nomad.ssl_ca:

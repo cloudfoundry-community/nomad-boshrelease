@@ -32,6 +32,8 @@ server {
   bootstrap_expect = <%= link('nomad_servers').instances.size %>
   rejoin_after_leave = true
   encrypt = "<%= p('nomad.encrypt') %>"
+  node_gc_threshold = "<%= p('nomad.node_gc_threshold') %>"
+  job_gc_threshold = "<%= p('nomad.job_gc_threshold') %>"
 }
 
 tls {
