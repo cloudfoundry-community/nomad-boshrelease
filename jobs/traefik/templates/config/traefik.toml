@@ -19,7 +19,7 @@ constraints = ["tag==enabled"]
       KeyFile = "/var/vcap/jobs/traefik/config/ssl/tls.key"
 
   [entryPoints.admin]
-  address = ":8080"
+  address = ":8443"
   [entryPoints.admin.auth.basic]
   users = [<% p('traefik.admin.users').each do |u| %><%="\"#{u}\""%>,<% end %>]
     [entryPoints.admin.tls]
