@@ -1,1 +1,0 @@
-- Change traefik admin entrypoint port to 8443 (more common alternative ssl port), works with CloudFlare for example
