@@ -31,6 +31,9 @@ case $1 in
   stop)
     kill_and_wait $PIDFILE
 
+    # unmount all nomad-client related mounts
+    df | grep nomad-client | awk '{print $6}' | xargs sudo umount
+
     ;;
   *)
     echo "Usage: nomad_ctl {start|stop}"
