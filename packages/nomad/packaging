@@ -1,7 +1,7 @@
 set -e # exit immediately if a simple command exits with a non-zero status
 set -u # report the usage of uninitialized variables
 
-VERSION=0.5.6
+VERSION=0.6.0
 pushd nomad
 unzip nomad_${VERSION}_linux_amd64.zip
 mkdir $BOSH_INSTALL_TARGET/bin
