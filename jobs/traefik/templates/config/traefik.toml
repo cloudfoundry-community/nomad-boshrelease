@@ -1,10 +1,10 @@
 logLevel = "<%= p("traefik.log_level") %>"
 defaultEntryPoints = ["http","https"]
+accessLogsFile = "/var/vcap/sys/log/traefik/access.log"
 
 [consulCatalog]
 endpoint = "<%= p('traefik.consul_addr') %>"
 watch = true
-constraints = ["tag==enabled"]
 
 [entryPoints]
   [entryPoints.http]

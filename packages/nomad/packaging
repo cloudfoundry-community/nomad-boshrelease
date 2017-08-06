@@ -6,7 +6,3 @@ pushd nomad
 unzip nomad_${VERSION}_linux_amd64.zip
 mkdir $BOSH_INSTALL_TARGET/bin
 cp -a nomad $BOSH_INSTALL_TARGET/bin
-
-
-chmod +x hashi-ui
-cp hashi-ui $BOSH_INSTALL_TARGET/bin
