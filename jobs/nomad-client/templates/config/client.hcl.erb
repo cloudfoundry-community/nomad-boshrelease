@@ -67,6 +67,8 @@ tls {
 <% end %>
 }
 
+
+<% if_p('nomad.vault.enabled') do || %>
 vault {
   enabled     = true
   address     = "<%= p('nomad.vault.address') %>"
@@ -77,3 +79,4 @@ vault {
   key_file = "/var/vcap/jobs/nomad-client/ssl/vault_key.pem"
 <% end %>
 }
+<% end %>
