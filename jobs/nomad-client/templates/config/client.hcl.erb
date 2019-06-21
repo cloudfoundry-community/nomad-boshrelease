@@ -68,7 +68,7 @@ tls {
 }
 
 
-<% if_p('nomad.vault.enabled') do || %>
+<% if p('nomad.vault.token', nil) %>
 vault {
   enabled     = true
   address     = "<%= p('nomad.vault.address') %>"
