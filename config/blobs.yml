@@ -1,20 +1,20 @@
 git/git-2.12.0.tar.gz:
   size: 6381790
-  object_id: 5fd02b20-686a-4cd0-9ce7-c414ac3482ef
-  sha: 4be31c6c5ecf77bc64f6cdf075171a5f7e0b7c44
+  object_id: ddfc25ac-948e-464a-72d4-316008ff8c0b
+  sha: sha256:1f94b3bbe2928b63ce7d743438052ad07f21b20e91ca5b9161e03fd220269016
 hashi-ui/hashi-ui:
   size: 16996052
-  object_id: 3358e7ec-833d-44f0-5b8b-09039f2a49a5
-  sha: 1a51e0187b1258ab8af13dddc102fcfac65a5ab5
-nomad/nomad_0.5.6_linux_amd64.zip:
-  size: 9218324
-  object_id: 8f945981-6eb5-4c5c-714d-7ad56bc54916
-  sha: ee25563fd097d2c34a062ec60c1f95fcfc2e490d
+  object_id: a0969755-901d-410d-56dc-edc7074d3ea7
+  sha: sha256:202d667a5e4ea41d9178404b61a19e81ad2a1915e23def5007b985853b42abb9
 nomad/nomad_0.6.0_linux_amd64.zip:
   size: 10381056
-  object_id: 98bdd0a1-713d-4a17-4e7f-76da73df4aad
-  sha: 81e729a80d03a8aad7e6772a2fdff3acb6f05cc3
+  object_id: 43b97250-a935-46ce-660c-e4600cc8e9d2
+  sha: sha256:fcf108046164cfeda84eab1c3047e36ad59d239b66e6b2f013e6c93064bc6313
+nomad/nomad_0.9.3_linux_amd64.zip:
+  size: 26738948
+  object_id: 133abfcc-f547-405a-65c9-0a6ace44db6c
+  sha: sha256:cbd008dd2f3c622cb931ce8e7e6465f5b683e66845eb70adb776c970a8029578
 traefik/traefik:
   size: 44751360
-  object_id: fae493a1-c29f-4ebb-4d54-a1a4036b69e3
-  sha: 4212e464a77170b593cbf3f4293ff0b100c5b8cb
+  object_id: 48a7eb01-d0e6-44ac-4ca6-5edf667dc2a6
+  sha: sha256:924819c84037f87823949ca8592d8ea200ce058efd82c582bc3b705edd4d9127
