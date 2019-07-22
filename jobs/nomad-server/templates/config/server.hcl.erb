@@ -52,9 +52,7 @@ vault {
   enabled     = true
   address     = "<%= p('nomad.vault.address') %>"
   token       = "<%= p('nomad.vault.token') %>"
-<% if_p('nomad.vault.create_from_role') do |role| %>
-  create_from_role = "<%= role %>"
-<% end %>
+  create_from_role = "<%= p('nomad.vault.create_from_role') %>"
 
 <% if_p('nomad.vault.ssl_ca', 'nomad.vault.ssl_cert', 'nomad.vault.ssl_key') do || %>
   ca_file = "/var/vcap/jobs/nomad-server/ssl/vault_ca_certificate.pem"
