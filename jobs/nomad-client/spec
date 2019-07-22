@@ -31,6 +31,10 @@ properties:
     description: Log level for nomad
     default: INFO
 
+  nomad.persist_data_dir:
+    description: false if your nomad client's data directory should be ephemeral
+    default: true
+
   nomad.node_class:
     description: string used to logically group nodes
   nomad.meta:

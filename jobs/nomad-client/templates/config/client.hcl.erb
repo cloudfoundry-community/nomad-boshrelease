@@ -1,5 +1,9 @@
 name = "<%= name %>/<%= index %>"
+<% if p('nomad.persist_data_dir') %>
 data_dir = "/var/vcap/store/nomad-client"
+<% else %>
+data_dir = "/var/vcap/data/nomad-client"
+<% end %>
 log_level = "<%= p('nomad.log_level') %>"
 enable_syslog = true
 
