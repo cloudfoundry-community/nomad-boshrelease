@@ -74,6 +74,7 @@ properties:
     description: The token for nomad to authenticate to vault with
   nomad.vault.create_from_role:
     description: The role to create from
+    default: 'nomad-cluster'
   nomad.vault.ssl_ca:
     description: Contents of the PEM-encoded TLS CA certificate
   nomad.vault.ssl_cert:
