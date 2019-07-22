@@ -1,6 +1,6 @@
 ---
 blobstore:
-  provider: gcs
+  provider: s3
   options:
-    bucket_name: nomad-boshrelease-ships-github-com
+    bucket_name: nomad-boshrelease
 final_name: nomad
