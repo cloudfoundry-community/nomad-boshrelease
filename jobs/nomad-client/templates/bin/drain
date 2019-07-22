@@ -4,7 +4,7 @@ export JOB_DIR=/var/vcap/jobs/nomad-client
 export PATH=$PATH:/var/vcap/packages/nomad/bin
 source ${JOB_DIR}/data/properties.sh
 
-nomad node-drain -enable -yes -self
+nomad node-drain -enable -yes -self -detach
 
 sleep <%= p('nomad.max_kill_timeout') + 2 %>
 # Drain script requires printing 0 to stdout followed by a newline
