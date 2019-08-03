@@ -4,5 +4,7 @@
 export JOB_DIR=/var/vcap/jobs/nomad-client
 export PATH=$PATH:/var/vcap/packages/nomad/bin
 source ${JOB_DIR}/data/properties.sh
-
-nomad node-drain -disable -yes -self
+for n in 1 2 3 4 5; do
+  nomad node-drain -disable -yes -self && exit 0 || sleep 6
+done
+exit 1

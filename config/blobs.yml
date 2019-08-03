@@ -14,6 +14,10 @@ nomad/nomad_0.6.0_linux_amd64.zip:
   size: 10381056
   object_id: 98bdd0a1-713d-4a17-4e7f-76da73df4aad
   sha: 81e729a80d03a8aad7e6772a2fdff3acb6f05cc3
+nomad/nomad_0.9.3_linux_amd64.zip:
+  size: 26738948
+  object_id: f83e2307-d1b7-4801-7bf1-59359946d910
+  sha: sha256:cbd008dd2f3c622cb931ce8e7e6465f5b683e66845eb70adb776c970a8029578
 traefik/traefik:
   size: 44751360
   object_id: fae493a1-c29f-4ebb-4d54-a1a4036b69e3

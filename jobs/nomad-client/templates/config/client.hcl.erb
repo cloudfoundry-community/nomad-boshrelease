@@ -1,5 +1,9 @@
 name = "<%= name %>/<%= index %>"
+<% if p('nomad.persist_data_dir') %>
 data_dir = "/var/vcap/store/nomad-client"
+<% else %>
+data_dir = "/var/vcap/data/nomad-client"
+<% end %>
 log_level = "<%= p('nomad.log_level') %>"
 enable_syslog = true
 
@@ -67,6 +71,8 @@ tls {
 <% end %>
 }
 
+
+<% if p('nomad.vault.address', nil) %>
 vault {
   enabled     = true
   address     = "<%= p('nomad.vault.address') %>"
@@ -77,3 +83,4 @@ vault {
   key_file = "/var/vcap/jobs/nomad-client/ssl/vault_key.pem"
 <% end %>
 }
+<% end %>

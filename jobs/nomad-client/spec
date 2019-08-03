@@ -31,6 +31,10 @@ properties:
     description: Log level for nomad
     default: INFO
 
+  nomad.persist_data_dir:
+    description: false if your nomad client's data directory should be ephemeral
+    default: true
+
   nomad.node_class:
     description: string used to logically group nodes
   nomad.meta:
@@ -65,9 +69,6 @@ properties:
   nomad.consul.ssl_key:
     description: Contents of the PEM-encoded TLS server private key
 
-  nomad.vault.endabled:
-    description: Should the integration with vault be enabled
-    default: false
   nomad.vault.address:
     description: Where to access vault
     default: https://vault.service.consul:8200
